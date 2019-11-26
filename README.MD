@@ -1,5 +1,5 @@
  # Wedding Planner
- ## About 
+  ## About 
  1. This app is for the people who wants to plan and manage their own wedding
  
 ## * User Story
@@ -20,3 +20,8 @@
 6. express
 7. node.js
 
+### ERD ![alt text](https://i.imgur.com/58oomlb.jpg?1)
+
+### wireframes ![alt text](https://i.imgur.com/smQ4jTE.png)
+
+### github ![alt text](https://github.com/Ruhi-1/Wedding-Planner)
