@@ -14,10 +14,10 @@
 </head>
 
 <header>
-  <div>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Wedding Planner</a>
+      <div class="navbar navbar-light" style="background-color: rgb(129, 126, 120)">
+        <a href="/" class="brand-logo left">Home</a>
+        <a href="/guests" class="brand-logo center">guests-list</a>
+        <a href="/foods" class="brand-logo center">Foods-list</a>
         <ul class="right">
           <li>
           <% if (user) { %>
@@ -28,18 +28,18 @@
           </li>
         </ul>
       </div>
-    </nav>
-  </div>
 </header>
 <br>
 <body>
-  <form action="/" method="POST" id="new-names">
-    <label class="">Your Name:
+  <br>
+  <form action="/" method="POST">
+    <label class="names">Your Name:
       <input type="text" name="name">
     </label>
     <br>
-    <label>Wedding Date:
-    <input type="date" value= "yyy-MM-dd" name="departs">
+    <br>
+    <label class="names">Wedding Date:
+    <input type="date" value= "yyy-MM-dd" name="Wedding-Date">
     </label>
   </form>
 </body>
