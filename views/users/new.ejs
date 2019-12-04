@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
         <title>Wedding Planner</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,19 +12,19 @@
       </head>
 
 <header>
-        <div class="navbar navbar-light" style="background-color: rgb(100, 97, 97)">
+        <div class="navbar navbar-light" style="background-color: rgb(117, 79, 79)">
           <a href="/" class="brand-logo left">Home</a>
           <a href="/users" class="brand-logo center">lists</a>
           <a href="/users/new">Guests Names</a>
-          <a href="/foods" class="brand-logo center">Foods-list</a>
+          <a href="/foods/new" class="brand-logo center">Foods-list</a>
           
         </div>
   </header>
   <br>
-  <body>
+<body class="body" style="background-image: url(https://i.imgur.com/lkKoZ5s.png);">
     <br>
     <form action="/users" method="POST">
-        <label class="names">names:
+        <label class="names">Names:
             <input type="text" name="names">
         </label>
         <br><br>
@@ -32,4 +34,5 @@
         <br><br>
         <button type="submit" value="Add Names" id="add-names">Add Guests</button>
       
-  </body>
+</body>
+</html>

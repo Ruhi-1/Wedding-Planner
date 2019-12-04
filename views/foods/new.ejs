@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Google Icon Fonts used by Materialize -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Materialize CSS Framework -->
+        <link rel="stylesheet" href="stylesheets/style.css" />
+        <!-- JavaScript for Materialize -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Wedding Planner</title>
+</head>
+<body>
+    <form action="/foods/new" method="POST">
+        <label>Foods:
+            <select name="foods">
+                <option value="starters">starters</option>
+                <option value="main">main</option>
+                <option value="desserts">desserts</option>
+            </select>
+            </label>
+            <label>
+                <input type="submit" value="Add Foods" id="add-foods">
+            </label>
+            </form>
+</body>
+</html>
