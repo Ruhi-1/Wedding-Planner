@@ -15,14 +15,14 @@ function index(req, res, next) {
   User.find(modelQuery)
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
-        res.render('/users', {
+        res.render('/users/index', {
             users,
             user: req.user,
             name: req.query.name,
             sortKey 
         });
-        })
-    };
+        });
+    }
   
 function create(req, res) {
     for (let key in req.body) {

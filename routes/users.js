@@ -7,9 +7,9 @@ router.get('/', usersCtrl.index);
 router.get('/new', usersCtrl.new);
 router.post('/users/:id', usersCtrl.create)
 
-// router.post('/users/names', isLoggedIn, usersCtrl.addNames);
+// router.post('/names', isLoggedIn, usersCtrl.addNames);
 
-function isLoggedIn() {
+function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
    res.redirect('/auth/google');
 }
