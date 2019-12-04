@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Users</title>
-</head>
+    <head>
+        <title>Wedding Planner</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Google Icon Fonts used by Materialize -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Materialize CSS Framework -->
+        <link rel="stylesheet" href="stylesheets/style.css" />
+        <!-- JavaScript for Materialize -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+        
 <body>
-    
+    <header>
+        <div class="navbar navbar-light" style="background-color: rgb(100, 97, 97)">
+        <a href="/" class="brand-logo left">Home</a>
+        <a href="/users" class="brand-logo center">lists</a>
+        <a href="/users/new">Guests Names</a>
+        <a href="/foods" class="brand-logo center">Foods-list</a>
+        
+    </header>
+    <br>
+    <h2>Names</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Names</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(n) { %>
+                <tr>
+                    <th><%= n.names %></th>
+                    <th><%= n.phoneNo %></th>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 </body>
 </html>

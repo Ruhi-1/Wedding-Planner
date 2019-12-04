@@ -1,28 +1,17 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
-var passport = require('passport');
 
 
 /* GET users listing. */
 router.get('/', usersCtrl.index);
+router.get('/new', usersCtrl.new);
+router.post('/users/:id', usersCtrl.create)
 
-router.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email'] }
-));
+// router.post('/users/names', isLoggedIn, usersCtrl.addNames);
 
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect : '/loggedin/admin',
-    failureRedirect : '/'
-  }
-));
-
-router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
+function isLoggedIn() {
+  if ( req.isAuthenticated() ) return next();
+   res.redirect('/auth/google');
+}
 
 module.exports = router;

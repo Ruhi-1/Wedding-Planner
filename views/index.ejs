@@ -14,9 +14,10 @@
 </head>
 
 <header>
-      <div class="navbar navbar-light" style="background-color: rgb(129, 126, 120)">
+      <div class="navbar navbar-light" style="background-color: rgb(100, 97, 97)">
         <a href="/" class="brand-logo left">Home</a>
-        <a href="/guests" class="brand-logo center">guests-list</a>
+        <a href="/users" class="brand-logo center">lists</a>
+        <a href="/users/new">Guests Names</a>
         <a href="/foods" class="brand-logo center">Foods-list</a>
         <ul class="right">
           <li>
@@ -31,15 +32,6 @@
 </header>
 <br>
 <body>
-  <br>
-  <form action="/" method="POST">
-    <label class="names">Your Name:
-      <input type="text" name="name">
-    </label>
-    <br>
-    <br>
-    <label class="names">Wedding Date:
-    <input type="date" value= "yyy-MM-dd" name="Wedding-Date">
-    </label>
-  </form>
+    <h3><%= title %></h3>
+    <p>Welcome to my <%= title %></p>
 </body>

@@ -15,14 +15,14 @@ router.get('/', passport.authenticate(
   'google',
   {
     successRedirect : '/users',
-    failureRedirect : '/'
+    failureRedirect : '/users'
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/users');
 });
 
 

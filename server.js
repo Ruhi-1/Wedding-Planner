@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var logger = require('morgan');
+var methodOverride = require('method-override');
+
 
 // load the env vars
 require('dotenv').config();
@@ -15,7 +17,8 @@ require('./config/passport');
 
 // require our routes
 var indexRouter = require('./routes/index');
-var userRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
+// var guestsRouter = require('./routes/guests');
 
 var app = express();
 
@@ -35,10 +38,12 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride('_method'));
 
 
 app.use('/', indexRouter);
-app.use('/user', userRouter);
+app.use('/users', usersRouter);
+// app.use('/', guestsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
