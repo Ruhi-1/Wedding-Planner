@@ -14,8 +14,8 @@ var userSchema = new mongoose.Schema({
     email: String,
     cohort: String,
     avatar: String,
+    guests: [guestsSchema],
     googleId: String,
-    guests: [guestsSchema]
   }, {
     timestamps: true
   });

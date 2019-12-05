@@ -15,7 +15,7 @@ function index(req, res, next) {
   User.find(modelQuery)
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
-        res.render('/users/index', {
+        res.render('users/index', {
             users,
             user: req.user,
             name: req.query.name,
@@ -25,6 +25,7 @@ function index(req, res, next) {
     }
   
 function create(req, res) {
+    console.log("create***************")
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

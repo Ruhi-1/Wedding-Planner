@@ -1,4 +1,9 @@
 body {
+  background-image: url(https://i.imgur.com/lkKoZ5s.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: none;
   padding: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -17,13 +22,4 @@ a {
   color: rgb(126, 58, 58);
   padding: 130px;
 
-}
-
-.body {
-  background-image: url(https://i.imgur.com/lkKoZ5s.png);
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    align-items: center;
-    width: none;
 }
