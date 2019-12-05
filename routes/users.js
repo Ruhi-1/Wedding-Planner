@@ -3,9 +3,9 @@ var usersCtrl = require('../controllers/users');
 
 
 /* GET users listing. */
-router.get('/', usersCtrl.index);
-router.get('/new', usersCtrl.new);
-router.post('/users/:id', usersCtrl.create)
+//router.get('/', usersCtrl.index);
+//router.get('/new', usersCtrl.new);
+router.post('/', usersCtrl.create)
 
 // router.post('/names', isLoggedIn, usersCtrl.addNames);
 

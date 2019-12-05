@@ -1,8 +1,8 @@
 var router = require('express').Router();
-var foodsCtrl = require('../controllers/foods');
+var functionsCtrl = require('../controllers/functions');
 
 // router.get('/', foodsCtrl.index);
-router.get('/new', foodsCtrl.new);
+router.get('/new', functionsCtrl.new);
 
 
 module.exports = router;

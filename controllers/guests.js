@@ -1,17 +1,30 @@
-var Guests = require('../models/guests');
+var User = require('../models/user');
 
 module.exports = {
     create,
     new: newNames,
+    index
 }
 
+function index(req, res) {
+    console.log(req.user);
+    User.findById(req.user).exec(function(err, users) {
+    res.render('guests/index', { users });
+});
+};
+
 function newNames (req, res) {
-    res.render('users/new', { names: 'Add Names' })
+    res.render('guests/new', { names: 'Add Names' })
 }
 
 function create(req,res) {
-    req.body.flight = req.params.id;  
-    Guest.create(req.body, function(err,guest){
-        res.redirect(`/guests/${req.body.flight}`)
-    });
+    console.log(req.bod)
+    User.findById(req.user).exec(function(err, user) {
+        user.guests.push(req.body);
+        console.log(user)
+        user.save(function (err) {
+            if (err) return next (err);
+            res.redirect('guests/');
+});
+});
 }

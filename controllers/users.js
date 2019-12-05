@@ -1,5 +1,6 @@
-const Foods = require('../models/foods');
+// const Foods = require('../models/foods');
 const User = require('../models/user');
+
 
 module.exports = {
     index,
@@ -25,7 +26,7 @@ function index(req, res, next) {
     }
   
 function create(req, res) {
-    console.log("create***************")
+    console.log("nowwww***************")
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

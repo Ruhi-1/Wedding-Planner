@@ -17,8 +17,8 @@ require('./config/passport');
 
 // require our routes
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var foodsRouter = require('./routes/foods');
+var guestsRouter = require('./routes/guests');
+var functionsRouter = require('./routes/functions');
 
 var app = express();
 
@@ -38,12 +38,12 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(methodOverride('_method'));
 
-
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/', foodsRouter);
+app.use('/guests', guestsRouter);
+app.use('/', functionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
