@@ -5,7 +5,7 @@ const User = require('../models/user');
 module.exports = {
     // index,
    new: addWedding,
-    // create,
+    create,
     update
 
 }
@@ -24,12 +24,12 @@ function addWedding (req, res) {
 // });
 }
 
-// function create(req,res) {
-//     req.body.guest = req.params.id;  
-//     Wedding.create(req.body, function(err,wedding){
-//         res.redirect('guests/');
-//     });
-// }
+function create(req,res) {
+    req.body.guest = req.params.id;  
+    Wedding.create(req.body, function(err,wedding){
+        res.redirect('guests/');
+    });
+}
 
 
 // function create(req,res) {
