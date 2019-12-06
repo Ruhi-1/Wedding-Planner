@@ -5,14 +5,14 @@ const User = require('../models/user');
 module.exports = {
     // index,
    new: addWedding,
-    create,
+    // create,
     update
 
 }
 
 function update(req, res) {
     var guest = req.user.guests.id(req.params.id);
-guest.update();
+Guest.update();
 req.user.save(function(err) {
   res.redirect('/guests');
 });
@@ -24,12 +24,12 @@ function addWedding (req, res) {
 // });
 }
 
-function create(req,res) {
-    req.body.guest = req.params.id;  
-    Wedding.create(req.body, function(err,wedding){
-        res.redirect('guests/');
-    });
-}
+// function create(req,res) {
+//     req.body.guest = req.params.id;  
+//     Wedding.create(req.body, function(err,wedding){
+//         res.redirect('guests/');
+//     });
+// }
 
 
 // function create(req,res) {
