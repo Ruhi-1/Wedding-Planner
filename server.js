@@ -18,8 +18,7 @@ require('./config/passport');
 // require our routes
 var indexRouter = require('./routes/index');
 var guestsRouter = require('./routes/guests');
-var functionsRouter = require('./routes/functions');
-
+var weddingsRouter = require('./routes/weddings');
 var app = express();
 
 // view engine setup
@@ -43,7 +42,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/guests', guestsRouter);
-app.use('/', functionsRouter);
+app.use('/weddings', weddingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

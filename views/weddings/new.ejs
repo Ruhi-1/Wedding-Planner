@@ -13,18 +13,31 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Wedding Planner</title>
 </head>
-<body>
-    <form action="/foods/new" method="POST">
-        <label>Functions:
-            <select name="functions">
-                <option value="Hena">Hena Ceremony</option>
+<body style="background-image: url(https://i.imgur.com/lkKoZ5s.png);">
+    <header>
+        <div class="navbar navbar-light" style="background-color: rgb(117, 79, 79)">
+            <a href="/" class="brand-logo left">Home</a>
+            <a href="/guests" class="brand-logo center">lists</a>
+            <a href="/guests/new">Guests Names</a>
+            <a href="/weddings/new" class="brand-logo center">Add Wedding</a>
+        </div>
+    </header>
+    <br>
+    <h2>Add Wedding Functions</h2>
+    <br><br>
+   
+    <form id="add-wedding-form" action="/guests" method="POST">
+        <label>Weddings:
+            <select name="weddings">
+                <option value="sangeet">Sangeet Ceremony</option>
                 <option value="nikkah">Nikkah</option>
                 <option value="reception">Reception</option>
             </select>
-            </label>
-            <label>
-                <input type="submit" value="Add Functions" id="add-functions">
-            </label>
+        </label>
+            <br><br>
+        <label>
+            <button type="submit" value="Add Weddings" id="add-weddings">Add weddings</button>
+        </label>
             </form>
 </body>
 </html>

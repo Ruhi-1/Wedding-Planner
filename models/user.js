@@ -7,7 +7,7 @@ var guestsSchema = new mongoose.Schema ({
   phoneNo: {
       type: String
   },
-})
+});
 
 var userSchema = new mongoose.Schema({
     name: String,
