@@ -8,18 +8,20 @@ module.exports = {
 }
 
 function deleteGuests(req, res) {
-    User.findById(req.user).exec(function(err, user) {
-        delete user.guests[req.params.id] //correct way to delete guests by index
-        user.save(function (err) {  
-            if (err) return next (err);
-            res.redirect('/guests');
-        });
-    });
+    console.log(req.params.id);
+
+    var guest = req.user.guests.id(req.params.id);
+// remove subdoc from the guests mongoose array
+guest.remove();
+// save the user doc
+req.user.save(function(err) {
+  res.redirect('/guests');
+});
 }
 
 function index(req, res) {
-    User.findById(req.user).exec(function(err, users) {
-    res.render('guests/index', { users });
+    User.findById(req.user).exec(function(err, user) {
+    res.render('guests/index', { user });
 });
 };
 

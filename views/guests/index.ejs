@@ -17,7 +17,6 @@
         <a href="/" class="brand-logo left">Home</a>
         <a href="/guests" class="brand-logo center">lists</a>
         <a href="/guests/new">Guests Names</a>
-        <a href="/weddings/new" class="brand-logo center">Add Weddings</a>
         
     </header>
     <br>
@@ -28,20 +27,26 @@
                 <th>Delete</th>
                 <th>Names</th>
                 <th>Phone Number</th>
+                <th>Wedding</th>
+                
                 <th>Add Weddings</th>
+    
             </tr>
         </thead>
         <tbody>
-            <% users.guests.forEach(function(n, idx) { %>
+            <% user.guests.forEach(function(n, idx) { %>
                 <% if(n == undefined) { return; }; %>
                     <tr>
-                        <form action="/guests/<%= idx %>?_method=DELETE" method="POST" class="delete-form">
+                        <form action="/guests/<%= n._id %>?_method=DELETE" method="POST" class="delete-form">
                             <th><button type="submit">X</button></th>
-                        </form>
+                        
                         <th><%= n.names %></th>
                         <th><%= n.phoneNo %></th>
+                        <th><%= n.wedding %></th>
                         <th><a href="/weddings/new">Add Weddings</a></th>
+                    </form>
                     </tr>
+
             <% }); %>
         </tbody>
 

@@ -1,5 +1,13 @@
 var mongoose = require('mongoose');
 
+var WeddingsSchema = new mongoose.Schema ({
+  names: {
+    type: String,
+    enum: ['Sangeet', 'nikkah', 'reception'],
+},
+
+});
+
 var guestsSchema = new mongoose.Schema ({
   names: {
       type: String
@@ -7,6 +15,7 @@ var guestsSchema = new mongoose.Schema ({
   phoneNo: {
       type: String
   },
+  weddings: [WeddingsSchema]
 });
 
 var userSchema = new mongoose.Schema({

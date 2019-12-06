@@ -5,27 +5,23 @@ const User = require('../models/user');
 module.exports = {
     // index,
    new: addWedding,
-    create
+    create,
+    update
+
 }
-// function index(req, res, next) {
-//   // Default to sorting by name
-//   let sortKey = req.query.sort || 'name';
-//   User.find(modelQuery)
-//   .sort(sortKey).exec(function(err, users) {
-//     if (err) return next(err);
-//         res.render('functions/new', {
-//             users,
-//             user: req.user,
-//             name: req.query.name,
-//             sortKey 
-//         });
-//         });
-//     }
+
+function update(req, res) {
+    var guest = req.user.guests.id(req.params.id);
+guest.update();
+req.user.save(function(err) {
+  res.redirect('/guests');
+});
+}
 
 function addWedding (req, res) {
-    User.findById(req.params.id, function(err, guest) {
-    res.render('weddings/new', { title: 'Add Wedding', guest})
-});
+    // User.findById(req.params.id, function(err, guest) {
+    res.render('weddings/new', { name: 'Add Wedding'})
+// });
 }
 
 function create(req,res) {
