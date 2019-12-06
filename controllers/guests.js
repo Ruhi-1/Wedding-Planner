@@ -8,13 +8,9 @@ module.exports = {
 }
 
 function deleteGuests(req, res) {
-    console.log(req.params.id);
-
     var guest = req.user.guests.id(req.params.id);
-// remove subdoc from the guests mongoose array
-guest.remove();
-// save the user doc
-req.user.save(function(err) {
+    guest.remove();
+    req.user.save(function(err) {
   res.redirect('/guests');
 });
 }

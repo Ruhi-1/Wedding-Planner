@@ -10,6 +10,7 @@ module.exports = {
 
 }
 
+
 function update(req, res) {
     var guest = req.user.guests.id(req.params.id);
 Guest.update();
