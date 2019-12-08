@@ -25,7 +25,7 @@ function newNames (req, res) {
     res.render('guests/new', { names: 'Add Names' })
 }
 
-function create(req,res) {
+function create(req,res, next) {
     User.findById(req.user).exec(function(err, user) {
         user.guests.push(req.body);
         user.save(function (err) {
