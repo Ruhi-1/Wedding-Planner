@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var WeddingsSchema = new mongoose.Schema ({
   names: {
     type: String,
-    enum: ['Sangeet', 'nikkah', 'reception'],
+    enum: ['Sangeet', 'Nikkah', 'Reception'],
 },
 
 });

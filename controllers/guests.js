@@ -4,8 +4,10 @@ module.exports = {
     create,
     new: newNames,
     index,
-    delete: deleteGuests
+    delete: deleteGuests,
 }
+
+
 
 function deleteGuests(req, res) {
     var guest = req.user.guests.id(req.params.id);
@@ -26,6 +28,7 @@ function newNames (req, res) {
 }
 
 function create(req,res, next) {
+    // console.log('alkdjf;alksjdf;alkfja;sdlk')
     User.findById(req.user).exec(function(err, user) {
         user.guests.push(req.body);
         user.save(function (err) {
