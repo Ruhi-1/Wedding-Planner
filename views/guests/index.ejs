@@ -35,18 +35,24 @@
         </thead>
         <tbody>
             <% user.guests.forEach(function(n, idx) { %>
+            
                 <% if(n == undefined) { return; }; %>
                     <tr>
                         <form action="/guests/<%= n._id %>?_method=DELETE" method="POST" class="delete-form">
                             <th><button type="submit">X</button></th>
-                        
+                        </form>
                         <th><%= n.names %></th>
                         <th><%= n.phoneNo %></th>
-                        <th><%= n.weddings %></th>
-                        <th><a href="/weddings/new">Add Weddings</a></th>
-                    </form>
+                        <% var events = n.weddings.map(function(w) { %>
+                            <% return w.names %>
+                        <% }); %>
+                        <th><%= events.join(', ') %></th>
+                        <% if(n.weddings.length == 0) { %>
+                            <th><a href="/weddings/new?guest_id=<%= n._id %>">Add Event</a></th>
+                        <% } else { %>
+                            <th><a href="/weddings/update?guest_id=<%= n._id %>">Update Events</a></th>
+                        <% } %>
                     </tr>
-
             <% }); %>
 
         </tbody>

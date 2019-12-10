@@ -22,20 +22,31 @@
         </div>
     </header>
     <br>
-    <h2>Add Wedding Functions</h2>
-    <br><br>
-    <form id="add-wedding-form" action="/weddings?guest_id=<%= guest_id %>" method="POST">
-        <label>Weddings:
-            <select class="names" name='name'>
-                <option value="Sangeet">Sangeet Ceremony</option>
-                <option value="Nikkah">Nikkah</option>
-                <option value="Reception">Reception</option>
-            </select>
-        </label>
-            <br><br>
-        <label>
-            <button type="submit" value="Add-Weddings" id="add-weddings">Add wedding</button>
-        </label>
-            </form>
-</body>
-</html>
+    <h2>Names</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Delete</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% console.log(guest); %>
+
+            <% guest.weddings.forEach(function(n, idx) { %>
+            
+                    <tr>
+                        <form action="/weddings/<%= n._id %>?_method=DELETE&guest_id=<%=guest.id%>" method="POST" class="delete-form">
+                            <th><button type="submit">X</button></th>
+                        </form>
+                        <th><%= n.names %></th>
+                    </tr>
+            <% }); %>
+            
+        </tbody>
+  </table>
+  
+  <% if(guest.weddings.length < 3) { %>
+    <a href="/weddings/new?guest_id=<%= guest._id %>">Add Event</a>
+    <% }; %>

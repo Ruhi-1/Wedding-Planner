@@ -3,10 +3,11 @@ var weddingsCtrl = require('../controllers/weddings');
 
 router.get('/', weddingsCtrl.index);
 router.get('/new', weddingsCtrl.new);
-router.put('/:id/guests', weddingsCtrl.update);
-router.get('/', weddingsCtrl.show);
+router.put('/', weddingsCtrl.update);
+router.get('/update', weddingsCtrl.show);
 router.get('/:id/edit', weddingsCtrl.edit);
-// router.post('/weddings', weddingsCtrl.create); // /weddings/guests
+router.delete('/:id', weddingsCtrl.delete);
+router.post('/', weddingsCtrl.create); // /weddings/guests
 // router.create('/:id', weddingsCtrl.create);
 
 

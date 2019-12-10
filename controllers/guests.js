@@ -28,8 +28,9 @@ function newNames (req, res) {
 }
 
 function create(req,res, next) {
-    // console.log('alkdjf;alksjdf;alkfja;sdlk')
+    console.log('alkdjf;alksjdf;alkfja;sdlk')
     User.findById(req.user).exec(function(err, user) {
+        //console.log(req.body);
         user.guests.push(req.body);
         user.save(function (err) {
             if (err) return next (err);
