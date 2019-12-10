@@ -14,18 +14,19 @@
 </head>
 <body>
   <header>
-      <div class="navbar navbar-light" style="background-color: rgb(117, 79, 79)">
-
-
+    <div class="navbar navbar-light" style="background-color: rgb(117, 79, 79)">
+      <a href="/" class="brand-logo left">Home</a>
+      <a href="/guests" class="brand-logo center">lists</a>
+      <a href="/guests/new">Guests Names</a>
+    <ul class="right">
+      <li>
         <% if (user) { %>
-              <a href="/" class="brand-logo left">Home</a>
-              <a href="/guests" class="brand-logo center">lists</a>
-              <a href="/guests/new">Guests Names</a>
           <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
           <% } else { %>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
           <% } %>
-
+      </li>
+    </ul>
     </div>
   </header>
     <p class="page">Welcome To My <%= title %> Page</p>
